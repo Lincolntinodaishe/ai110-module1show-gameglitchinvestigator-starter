@@ -8,6 +8,11 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
 - List at least two concrete bugs you noticed at the start  
   (for example: "the secret number kept changing" or "the hints were backwards").
 
+  1. attempts were going down to negatives.
+  2. couldnt restart a new game after winning or losing
+  3. Logic for go lower or go higher is backward.
+
+
 ---
 
 ## 2. How did you use AI as a teammate?
