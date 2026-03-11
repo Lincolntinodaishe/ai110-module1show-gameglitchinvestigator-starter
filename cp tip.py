@@ -44,7 +44,49 @@ raised_species2 = "aaaaabbbbcc"
 target_species2 = "abc"
 print(max_species_copies(raised_species2, target_species2)) # Output: 2
 
-def count_unique_species(ecosystem_data):
+def is_valid_post_format(posts):
+    d = {  ')' : "(",
+            '}' : '{',
+            ']' : '['
+    }
+    stack = []
+    for i in posts:
+        if i in '({[':
+            stack.append(i)
+        if i in ')}]':
+            if stack and d[i] != stack[-1]:
+                return False
+            else:
+                stack.pop()
+    if not stack:
+        return True
+    return False
+
+print (is_valid_post_format("()"))
+print (is_valid_post_format("()[]{}")) 
+print (is_valid_post_format("(]"))
+
+
+def is_symmetrical_title(title):
+    l = 0
+    r = len(title)-1
+    title = title.lower()
+    while l < r:
+        if not title[l].isalpha() :
+            l +=1
+            continue
+        if not title[r].isalpha():
+            r -= 1
+            continue
+        if title[l] != title[r]:
+            return False
+        l += 1
+        r -= 1
+    return True
+
+print(is_symmetrical_title("A Santa at NASA"))
+print(is_symmetrical_title("Social Media")) 
+
     
     
 
